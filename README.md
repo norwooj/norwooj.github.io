@@ -1,1 +1,1 @@
-Joseph Norwood Portfolio
+Joseph Norwood Personal Portfolio
