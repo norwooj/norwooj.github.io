@@ -35,7 +35,7 @@ nav {
 }
 
 nav h1 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -70,7 +70,7 @@ nav ul li a:hover {
 }
 
 .nav-container h1 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   margin: 0;
   color: white;
 }
@@ -282,15 +282,27 @@ footer {
     text-align: right;
   }
 
+    #hero {
+    padding: 2rem 0;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
   .hero-content {
     flex-direction: column;
     text-align: center;
-    width: 100%
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .hero-content img {
-    width: 100%;
-    max-width: 100%;
+    width: 95vw;
+    max-width: 95vw;
+    margin: 0 auto;
+    display: block;
     height: auto;
   }
 
