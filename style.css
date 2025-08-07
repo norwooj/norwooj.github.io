@@ -124,7 +124,7 @@ nav ul li a:hover {
 
 .hero-content img {
   width: 50vw;
-  max-width: 500px;
+  max-width: 1200px;
   height: auto;
   object-fit: contain;
 }
