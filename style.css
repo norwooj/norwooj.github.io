@@ -148,13 +148,6 @@ nav ul li a:hover {
   text-align: center;
 }
 
-#hero img{
-  max-width: 200px;
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 .hero-content {
   display: flex;
   align-items: center;
@@ -169,8 +162,8 @@ nav ul li a:hover {
 }
 
 .hero-content img {
-  width: 120px;
-  height: 120px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
