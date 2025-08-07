@@ -119,8 +119,16 @@ nav ul li a:hover {
     margin: 1rem;
     text-align: center;
   }
-}
 
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
 
 #hero {
   text-align: center;
@@ -137,6 +145,35 @@ nav ul li a:hover {
 #hero p {
   font-size: 1.2rem;
   margin-top: 0.5rem;
+  text-align: center;
+}
+
+#hero img{
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-content img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
 }
 
 section {
