@@ -46,7 +46,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #D3D3D3;
+  color: #d3d3d3;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -54,7 +54,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #CCCCCC;
+  color: #e0e0e0;
 }
 
 .nav-container {
@@ -76,7 +76,7 @@ nav ul li a:hover {
   display: none;
   background: none;
   border: none;
-  color: #D3D3D3;
+  color: #d3d3d3;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -98,7 +98,7 @@ nav ul li a:hover {
     font-size: 2rem;
     background: none;
     border: none;
-    color: #D3D3D3;
+    color: #d3d3d3;
     cursor: pointer;
   }
 
