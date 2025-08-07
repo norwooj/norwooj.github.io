@@ -8,7 +8,13 @@
   box-sizing: border-box;
 }
 
-/* Fonts & Colors */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
@@ -23,8 +29,6 @@ header {
 }
 
 nav {
-  max-width: 900px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,8 +123,6 @@ nav ul li a:hover {
 }
 
 section {
-  max-width: 900px;
-  margin: 2rem auto;
   padding: 1rem;
 }
 
@@ -270,7 +272,7 @@ footer {
 
   .nav-links li {
     margin: 0.5rem 0;
-    text-align: left;
+    text-align: right;
   }
 
   .hero-content {
