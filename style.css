@@ -38,10 +38,23 @@ nav h1 {
 nav ul {
   display: flex;
   list-style: none;
+  padding-right: 2rem;
 }
 
 nav ul li {
   margin-left: 1.5rem;
+}
+
+nav ul li a {
+  color: #D3D3D3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: #CCCCCC;
 }
 
 .nav-container {
@@ -49,18 +62,13 @@ nav ul li {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
-nav ul li a {
-  color: #82aaff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #4cafef;
+.nav-container h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: white;
 }
 
 /* Hide menu button by default */
@@ -68,7 +76,7 @@ nav ul li a:hover {
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: #D3D3D3;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -90,7 +98,7 @@ nav ul li a:hover {
     font-size: 2rem;
     background: none;
     border: none;
-    color: #fff;
+    color: #D3D3D3;
     cursor: pointer;
   }
 
@@ -99,7 +107,8 @@ nav ul li a:hover {
     flex-direction: column;
     width: 100%;
     background-color: #1f1f1f;
-    margin-top: 1rem
+    margin-top: 1rem;
+    transition: max-height 0.3s ease-out;
   }
 
   .nav-links.show {
