@@ -81,5 +81,14 @@
   <footer>
     <p>© 2025 Joseph Norwood. All rights reserved.</p>
   </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
