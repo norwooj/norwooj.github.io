@@ -105,6 +105,7 @@ nav ul li a:hover {
 }
 
 .hero-content {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -284,6 +285,7 @@ footer {
   .hero-content {
     flex-direction: column;
     text-align: center;
+    width: 100%
   }
 
   .hero-content img {
