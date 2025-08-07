@@ -310,4 +310,12 @@ footer {
     text-align: center;
     align-items: center;
   }
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem
+  }
 }
