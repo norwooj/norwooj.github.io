@@ -28,7 +28,7 @@
         <div class="hero-text">
           <h2>Joseph Norwood</h2>
           <p>
-            Mechanical & Aerospace Engineer <br />
+            Mechanical & Aerospace Engineer<br />
             Robotics・Locomotion・Dynamics
           </p>
         </div>
@@ -95,6 +95,27 @@
     toggleButton.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
+
+    function shrinkTextToFit(textSelector, containerSelector, minFontSizePx = 8) {
+      const textEl = document.querySelector(textSelector);
+      const container = document.querySelector(containerSelector);
+      if (!textEl || !container) return;
+
+      let fontSize = parseFloat(window.getComputedStyle(textEl).fontSize);
+
+      // Shrink font size until text fits or minFontSize reached
+      while (textEl.scrollWidth > container.clientWidth && fontSize > minFontSizePx) {
+        fontSize -= 1;
+        textEl.style.fontSize = fontSize + 'px';
+      }
+    }
+
+    // Run the shrink on page load
+    window.addEventListener('load', () => {
+      shrinkTextToFit('#hero p', '#hero', 8);
+    });
   </script>
+
+  
 </body>
 </html>
