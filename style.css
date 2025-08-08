@@ -124,13 +124,18 @@ nav ul li a:hover {
 }
 
 .hero-text h2 {
-  font-size: clamp(2rem, 4vw, 4rem); /* Responsive size */
-  font-weight: 1000;
+  font-size: min(4vw, 4rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
 }
 
 .hero-text p {
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: min(2.5vw, 2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0.5rem 0 0;
 }
 
