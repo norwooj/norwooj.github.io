@@ -149,25 +149,48 @@
 
     const carousels = document.querySelectorAll('.carousel');
 
-    carousels.forEach(carousel => {
-      const images = carousel.querySelector('.carousel-images');
-      const imageCount = images.children.length;
-      let index = 0;
+carousels.forEach(carousel => {
+  const imagesContainer = carousel.querySelector('.carousel-images');
+  const images = imagesContainer.children;
+  const imageCount = images.length;
+  let index = 0;
 
-      const updateCarousel = () => {
-        images.style.transform = `translateX(-${index * 100}%)`;
-      };
+  // Function to update carousel position AND container height
+    const updateCarousel = () => {
+      imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+      updateHeight();
+    };
 
-      carousel.querySelector('.prev').addEventListener('click', () => {
-        index = (index - 1 + imageCount) % imageCount;
-        updateCarousel();
-      });
+    // Update height of images container to current image height scaled to container width
+    const updateHeight = () => {
+      const currentImage = images[index];
+      if (!currentImage) return;
 
-      carousel.querySelector('.next').addEventListener('click', () => {
-        index = (index + 1) % imageCount;
-        updateCarousel();
-      });
+      // Get natural image size (intrinsic size)
+      const naturalWidth = currentImage.naturalWidth;
+      const naturalHeight = currentImage.naturalHeight;
+
+      // Calculate height based on current container width (assuming width: 100%)
+      const containerWidth = imagesContainer.clientWidth;
+      const scaledHeight = (naturalHeight / naturalWidth) * containerWidth;
+
+      imagesContainer.style.height = scaledHeight + 'px';
+    };
+
+    carousel.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + imageCount) % imageCount;
+      updateCarousel();
     });
+
+    carousel.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % imageCount;
+      updateCarousel();
+    });
+
+    // On page load and resize, adjust height
+    window.addEventListener('load', updateCarousel);
+    window.addEventListener('resize', updateHeight);
+  });
   </script>
 
 </body>
