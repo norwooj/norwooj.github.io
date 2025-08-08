@@ -110,6 +110,7 @@ nav ul li a:hover {
 .hero-content {
   width: 100%;
   display: flex;
+  flex-direction: row;
   height: auto;
 }
 
@@ -119,23 +120,19 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
-  white-space: nowrap; /* Prevent text from wrapping */
+  white-space: nowrap;
+  text-align: left;
   overflow: hidden;
 }
 
 .hero-text h2 {
-  font-size: min(4vw, 4rem);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: calc(4vh + 1vw);
+  line-height: 1;
   margin: 0;
 }
 
 .hero-text p {
-  font-size: min(2.5vw, 2rem);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: calc(2.5vh + 0.5vw);
   margin: 0.5rem 0 0;
 }
 
@@ -344,8 +341,11 @@ footer {
   }
 
   .hero-text {
+    width: 100%;
+    white-space: normal;]
     text-align: center;
     align-items: center;
+    padding: 1rem;
   }
 
   #hero h2 {
