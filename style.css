@@ -97,11 +97,13 @@ nav ul li a:hover {
   font-weight: 1000;
   margin-bottom: 0;
   white-space: normal;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 #hero p {
+  white-space: nowrap;
   font-size: clamp(1.2rem, 4vw, 2rem);
+  line-height: 1;
   margin-top: 0.5rem;
 }
 
