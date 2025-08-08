@@ -134,7 +134,7 @@ nav ul li a:hover {
 }
 
 .hero-text p {
-  font-size: clamp(0.75rem, 2vw, 1.2rem);
+  font-size: clamp(0.25rem, 2vw, 1.2rem);
   margin: 0.5rem 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
