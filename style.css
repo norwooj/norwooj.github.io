@@ -190,6 +190,47 @@ h2 {
   object-fit: cover;
 }
 
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel-images img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.carousel .prev {
+  left: 0.5rem;
+}
+
+.carousel .next {
+  right: 0.5rem;
+}
+
 .tags {
   margin-top: 0.5rem;
   display: flex;
@@ -207,7 +248,7 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.tag-1 { background: #e91e63; 
+.tag-1 { background: #e91e63; }
 .tag-2 { background: #3f51b5; }
 .tag-3 { background: #4caf50; }
 .tag-4 { background: #ff9800; }
