@@ -95,33 +95,7 @@
     toggleButton.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
-
-    function shrinkTextToFit(textSelector, containerSelector, minFontSizePx = 8) {
-      const textEl = document.querySelector(textSelector);
-      const container = document.querySelector(containerSelector);
-      if (!textEl || !container) return;
-
-      let fontSize = parseFloat(window.getComputedStyle(textEl).fontSize);
-
-      // Reset font size to max for recalculation
-      textEl.style.fontSize = '';
-
-      while (textEl.scrollWidth > container.clientWidth && fontSize > minFontSizePx) {
-        fontSize -= 1;
-        textEl.style.fontSize = fontSize + 'px';
-      }
-    }
-
-    // Run on load and resize
-    function shrinkHeroText() {
-      shrinkTextToFit('#hero p', '.hero-text', 8);
-      shrinkTextToFit('#hero h2', '.hero-text', 12); // optional
-    }
-
-    window.addEventListener('load', shrinkHeroText);
-    window.addEventListener('resize', shrinkHeroText);
   </script>
 
-  
 </body>
 </html>
