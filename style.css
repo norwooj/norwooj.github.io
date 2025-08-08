@@ -142,9 +142,10 @@ nav ul li a:hover {
 .hero-content img {
   width: 50%;
   max-width: 1200;
+  aspect-ratio: 1 / 1;
   height: auto;
   object-fit: cover;
-  object-position: center;
+  object-position: left center;
   display: block;
 }
 
