@@ -173,6 +173,46 @@ h2 {
   text-decoration: underline;
 }
 
+.project-card .media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.project-card .media img,
+.project-card .media video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  flex: 1 1 45%; /* Make images/videos take roughly half the card width, wrap on small screens */
+  object-fit: cover;
+}
+
+.tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tag-1 { background: #e91e63; 
+.tag-2 { background: #3f51b5; }
+.tag-3 { background: #4caf50; }
+.tag-4 { background: #ff9800; }
+.tag-5 { background: #9c27b0; }
+
 footer {
   text-align: center;
   padding: 1rem;
