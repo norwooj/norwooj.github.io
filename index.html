@@ -67,12 +67,20 @@
           <div class="carousel">
             <button class="prev">&#10094;</button>
             <div class="carousel-images">
-              <video width="600" autoplay loop muted playsinline>
-                <source src="images/P-AgBot_Functionality_2025.mp4" type="video/mp4">
-              </video>
-              <video width="600" autoplay loop muted playsinline>
-                <source src="images/P-AgBot_Visual_Servoing_2025.mp4" type="video/mp4">
-              </video>
+            <iframe
+              src="https://youtu.be/10ZT1GPz76o"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              title="P-AgBot Functionality"
+            ></iframe>
+            <iframe
+              src="https://youtu.be/Kii4q3U3roM"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              title="P-AgBot Visual Servoing"
+            ></iframe>
               <img src="images/Drilling_AgBot_Deployed.jpg" alt="Drilling AgBot" />
               <img src="images/Sensing_AgBot_Deployed.PNG" alt="Sensing AgBot" />
               <img src="images/P-AgBot_CAD_Final.png" alt="CAD AgBot" />
@@ -284,18 +292,21 @@ carousels.forEach(carousel => {
 
     // Update height of images container to current image height scaled to container width
     const updateHeight = () => {
-      const currentImage = images[index];
-      if (!currentImage) return;
+      const currentSlide = images[index];
+      if (!currentSlide) return;
 
-      // Get natural image size (intrinsic size)
-      const naturalWidth = currentImage.naturalWidth;
-      const naturalHeight = currentImage.naturalHeight;
-
-      // Calculate height based on current container width (assuming width: 100%)
-      const containerWidth = imagesContainer.clientWidth;
-      const scaledHeight = (naturalHeight / naturalWidth) * containerWidth;
-
-      imagesContainer.style.height = scaledHeight + 'px';
+      if (currentSlide.tagName === "IMG") {
+        // same as before
+        const naturalWidth = currentSlide.naturalWidth;
+        const naturalHeight = currentSlide.naturalHeight;
+        const containerWidth = imagesContainer.clientWidth;
+        const scaledHeight = (naturalHeight / naturalWidth) * containerWidth;
+        imagesContainer.style.height = scaledHeight + 'px';
+      } else if (currentSlide.tagName === "IFRAME") {
+        // fixed 16:9 aspect ratio height
+        const containerWidth = imagesContainer.clientWidth;
+        imagesContainer.style.height = (containerWidth * 9) / 16 + 'px';
+      }
     };
 
     carousel.querySelector('.prev').addEventListener('click', () => {
