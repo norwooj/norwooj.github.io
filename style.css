@@ -212,6 +212,11 @@ h2 {
   border-radius: 8px;
 }
 
+.carousel-images iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
 .carousel button {
   position: absolute;
   top: 50%;
