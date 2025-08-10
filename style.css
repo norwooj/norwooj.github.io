@@ -211,13 +211,17 @@ h2 {
   border-radius: 8px;
 }
 
+.carousel-images video,
 .carousel-images iframe {
   flex-shrink: 0;
-  width: 100%;
-  height: auto;
+  width: auto;         /* let height drive the scaling */
+  height: 100vh;       /* fill full viewport height */
+  max-height: 100%;    /* don’t overflow container */
   border: none;
   border-radius: 8px;
   display: block;
+  margin: 0 auto;      /* center horizontally */
+  object-fit: contain; /* no cropping */
 }
 
 .carousel button {
