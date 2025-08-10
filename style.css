@@ -203,8 +203,7 @@ h2 {
   align-items: center;
 }
 
-.carousel-images img,
-.carousel-images iframe {
+.carousel-images img {
   height: auto;
   width: 100%;
   object-fit: contain;
@@ -213,8 +212,12 @@ h2 {
 }
 
 .carousel-images iframe {
-  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  width: 100%;
   height: auto;
+  border: none;
+  border-radius: 8px;
+  display: block;
 }
 
 .carousel button {

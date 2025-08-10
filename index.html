@@ -277,54 +277,68 @@
       navLinks.classList.toggle('show');
     });
 
-    const carousels = document.querySelectorAll('.carousel');
+    // Convert NodeList of carousels to an array
+    Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
+      const imagesContainer = carousel.querySelector('.carousel-images');
 
-carousels.forEach(carousel => {
-  const imagesContainer = carousel.querySelector('.carousel-images');
-  const images = imagesContainer.children;
-  const imageCount = images.length;
-  let index = 0;
+      // Convert HTMLCollection of slides to an array
+      const images = Array.from(imagesContainer.children);
+      const imageCount = images.length;
+      let index = 0;
 
-  // Function to update carousel position AND container height
-    const updateCarousel = () => {
-      imagesContainer.style.transform = `translateX(-${index * 100}%)`;
-      updateHeight();
-    };
+      // Function to update carousel position AND container height
+      const updateCarousel = () => {
+        imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+        updateHeight();
+      };
 
-    // Update height of images container to current image height scaled to container width
-    const updateHeight = () => {
-      const currentSlide = images[index];
-      if (!currentSlide) return;
+      // Update height of images container to current image height scaled to container width
+      const updateHeight = () => {
+        const currentSlide = images[index];
+        if (!currentSlide) return;
 
-      if (currentSlide.tagName === "IMG") {
-        // same as before
-        const naturalWidth = currentSlide.naturalWidth;
-        const naturalHeight = currentSlide.naturalHeight;
         const containerWidth = imagesContainer.clientWidth;
-        const scaledHeight = (naturalHeight / naturalWidth) * containerWidth;
-        imagesContainer.style.height = scaledHeight + 'px';
-      } else if (currentSlide.tagName === "IFRAME") {
-        // fixed 16:9 aspect ratio height
-        const containerWidth = imagesContainer.clientWidth;
-        imagesContainer.style.height = (containerWidth * 9) / 16 + 'px';
-      }
-    };
 
-    carousel.querySelector('.prev').addEventListener('click', () => {
-      index = (index - 1 + imageCount) % imageCount;
-      updateCarousel();
+        if (currentSlide.tagName === "IMG") {
+          const naturalWidth = currentSlide.naturalWidth;
+          const naturalHeight = currentSlide.naturalHeight;
+          const scaledHeight = (naturalHeight / naturalWidth) * containerWidth;
+          imagesContainer.style.height = scaledHeight + 'px';
+        } 
+        else if (currentSlide.tagName === "IFRAME") {
+          // Try to use actual video dimensions if available
+          if (currentSlide.videoWidth && currentSlide.videoHeight) {
+            imagesContainer.style.height = (currentSlide.videoHeight / currentSlide.videoWidth) * containerWidth + 'px';
+          } else {
+            // Fallback ratio if real dimensions aren't available
+            imagesContainer.style.height = containerWidth * 0.75 + 'px'; // ~4:3 fallback
+          }
+        }
+      };
+
+      carousel.querySelector('.prev').addEventListener('click', () => {
+        index = (index - 1 + imageCount) % imageCount;
+        updateCarousel();
+      });
+
+      carousel.querySelector('.next').addEventListener('click', () => {
+        index = (index + 1) % imageCount;
+        updateCarousel();
+      });
+
+      // Update height when iframe finishes loading
+      images.forEach(slide => {
+        if (slide.tagName === "IFRAME") {
+          slide.addEventListener("load", updateHeight);
+        }
+      });
+
+      // On page load and resize, adjust height
+      window.addEventListener('load', updateCarousel);
+      window.addEventListener('resize', updateHeight);
     });
-
-    carousel.querySelector('.next').addEventListener('click', () => {
-      index = (index + 1) % imageCount;
-      updateCarousel();
-    });
-
-    // On page load and resize, adjust height
-    window.addEventListener('load', updateCarousel);
-    window.addEventListener('resize', updateHeight);
-  });
   </script>
+
 
 </body>
 </html>
