@@ -203,7 +203,8 @@ h2 {
   align-items: center;
 }
 
-.carousel-images img {
+.carousel-images img,
+.carousel-images iframe {
   height: auto;
   width: 100%;
   object-fit: contain;
