@@ -213,6 +213,13 @@ h2 {
   object-fit: contain;
 }
 
+.carousel-images video {
+  width: auto;         /* don’t stretch horizontally */
+  height: 90vh;        /* fill most of the viewport height */
+  max-height: 100%;
+  margin: 0 auto;      /* center horizontally */
+}
+
 .carousel button {
   position: absolute;
   top: 50%;
