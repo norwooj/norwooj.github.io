@@ -192,17 +192,15 @@ h2 {
 
 .status {
   display: inline-block;
-  font-size: 0.65rem;          /* smaller font */
-  font-weight: 500;            /* medium weight, not too bold */
-  color: #888;                 /* slightly darker grey for good readability */
-  background-color: rgba(136, 136, 136, 0.12); /* very light translucent grey */
-  border-radius: 10px;
-  padding: 0.1rem 0.4rem;      /* less padding for smaller text */
-  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #aaa; /* soft grey text */
+  background-color: rgba(170, 170, 170, 0.15); /* light translucent grey background */
+  border-radius: 12px;
+  padding: 0.2rem 0.6rem;
+  margin-top: 0.75rem;
   user-select: none;
-  box-shadow: none;            /* remove shadow to keep subtle */
-  font-style: italic;          /* optional, to visually differentiate */
-  letter-spacing: 0.02em;      /* subtle spacing for neatness */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* subtle shadow, lighter for grey */
 }
 
 .carousel {
