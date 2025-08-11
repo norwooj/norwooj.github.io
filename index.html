@@ -395,15 +395,22 @@
         }
       };
 
-      carousel.querySelector('.prev').addEventListener('click', () => {
-        index = (index - 1 + imageCount) % imageCount;
-        updateCarousel();
-      });
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
 
-      carousel.querySelector('.next').addEventListener('click', () => {
-        index = (index + 1) % imageCount;
-        updateCarousel();
-      });
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          index = (index - 1 + imageCount) % imageCount;
+          updateCarousel();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          index = (index + 1) % imageCount;
+          updateCarousel();
+        });
+      }
 
       // Update height when iframe finishes loading
       images.forEach(slide => {
