@@ -145,65 +145,82 @@ h2 {
   font-weight: 600;
 }
 
-/* ===== Timeline Styles ===== */
 .timeline {
   position: relative;
-  margin: 2rem 0;
-  padding-left: 2rem;
-  border-left: 3px solid #ccc;
+  margin: 2rem auto;
+  padding-left: 0;
+  max-width: 800px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2rem;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -10px;
-  top: 0.4rem;
+  top: 1.2rem;
+  left: calc(50% - 8px);
   width: 16px;
   height: 16px;
-  background-color: #fff;
-  border: 3px solid #ff6600; /* Accent color */
+  background: #ff6600;
   border-radius: 50%;
+  border: 3px solid #121212;
+  z-index: 1;
 }
 
 .timeline-date {
   font-weight: 600;
-  color: #555;
-  margin-bottom: 0.25rem;
+  color: #ff9800;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-content {
-  background: #f9f9f9;
+  background: #1f1f1f;
+  color: #e0e0e0;
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content h3 {
   margin-top: 0;
-  font-size: 1.1rem;
+  color: #ffffff;
 }
 
 .timeline-content p {
-  margin: 0.25rem 0 0;
   font-size: 0.95rem;
-  line-height: 1.4;
+  color: #ccc;
+  line-height: 1.5;
 }
 
-/* Responsive: remove vertical line on mobile */
-@media (max-width: 600px) {
-  .timeline {
-    border-left: none;
-    padding-left: 0;
-  }
-
-  .timeline-item::before {
-    display: none;
-  }
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
 .project-grid {
@@ -454,5 +471,24 @@ footer {
   #hero p {
     font-size: clamp(1rem, 4.4vw, 1.5rem);
     margin-top: 1rem;
+  }
+
+    .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 2.5rem;
+    text-align: left !important;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-item::before {
+    left: 0;
+    transform: none;
   }
 }
