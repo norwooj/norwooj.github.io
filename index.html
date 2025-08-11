@@ -410,6 +410,7 @@
     // Convert NodeList of carousels to an array
     Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
       const imagesContainer = carousel.querySelector('.carousel-images');
+      if(!imagesContainer) return;
 
       // Convert HTMLCollection of slides to an array
       const images = Array.from(imagesContainer.children);
