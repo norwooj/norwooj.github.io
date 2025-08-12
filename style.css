@@ -233,7 +233,6 @@ h2 {
   justify-content: center;
   z-index: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 3px solid #121212; /* border to separate logo from background */
 }
 
 .dot-logo img {
