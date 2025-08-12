@@ -181,7 +181,7 @@ h2 {
   border-radius: 50%;
   overflow: hidden;
   background: #fff;           /* keeps SVGs visible if they are transparent */
-  border: 3px solid #1e1e1e;
+  border: 3px solid #ccc;
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
   z-index: 2;
   display: flex;
