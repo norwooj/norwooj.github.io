@@ -239,7 +239,6 @@ h2 {
 .dot-logo img {
   max-width: 24px;
   max-height: 24px;
-  filter: brightness(0) invert(1); /* makes sure logo is white, adjust if needed */
 }
 
 .timeline-item:hover .dot-logo {
