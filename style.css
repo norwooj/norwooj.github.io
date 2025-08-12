@@ -149,19 +149,16 @@ h2 {
   position: relative;
   max-width: 800px;
   margin: 2rem auto;
-  padding-left: 40px;
+  padding-left: 0;
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 1.5rem;
-  padding-left: 40px;
-  margin-left: 40px;
+  margin-left: 70px;
   background: rgba(30, 30, 30, 0.6);
   border-radius: 8px;
-  padding-top: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -213,7 +210,7 @@ h2 {
 
 .dot-logo {
   position: absolute;
-  left: 30px;  /* centers dot/logo over timeline line */
+  left: 12px;  /* centers dot/logo over timeline line */
   top: 24px;   /* aligns vertically with heading, adjust as needed */
   width: 36px;
   height: 36px;
