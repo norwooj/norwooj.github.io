@@ -173,7 +173,7 @@ h2 {
 
 .dot-logo {
   position: absolute;
-  left: 40px;                 /* same as .timeline::before left */
+  left: 42px;                 /* same as .timeline::before left */
   top: 22px;                  /* tweak this to vertically align with content */
   width: 40px;
   height: 40px;
@@ -202,7 +202,18 @@ h2 {
   border-radius: 6px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   color: #ccc;
+  position: relative;
   margin: 0; /* content is positioned by the timeline-item padding */
+}
+
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 28px; /* adjust until it points at dot center */
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-style: solid;
+  border-color: transparent #1e1e1e transparent transparent;
 }
 
 .timeline-item h3 {
