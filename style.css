@@ -152,17 +152,6 @@ h2 {
   padding-left: 20px;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #4cafef, #82aaff);
-  box-shadow: 0 0 6px rgba(76, 175, 239, 0.6);
-}
-
 .timeline-item {
   position: relative;
   margin-bottom: 1.5rem;
