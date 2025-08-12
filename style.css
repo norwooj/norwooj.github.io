@@ -185,8 +185,8 @@ h2 {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, #4cafef, #82aaff);
-  box-shadow: 0 0 6px rgba(76, 175, 239, 0.6);
+  background: #555;
+  box-shadow: 0 0 6px rgba(100, 100, 100, 0.6);
   z-index: 0;
 }
 
@@ -198,7 +198,7 @@ h2 {
 .timeline-item h3 {
   margin-bottom: 0.3rem;
   font-weight: 600;
-  color: #82aaff;
+  color: #bbb;
 }
 
 .timeline-item h4 {
@@ -227,7 +227,7 @@ h2 {
   height: 36px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(76, 175, 239, 0.8);
+  box-shadow: 0 0 8px rgba(170, 170, 170, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,7 +238,6 @@ h2 {
 .dot-logo img {
   max-width: 24px;
   max-height: 24px;
-  border: 8px
 }
 
 .timeline-item:hover .dot-logo {
@@ -253,7 +252,7 @@ h2 {
 }
 
 .project-card {
-  background: #1e1e1e;
+  background: #bbb;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
@@ -389,8 +388,8 @@ footer {
 }
 
 .button {
-    background: #4cafef;
-  color: white;
+  background: #bbb;
+  color: #121212;
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 4px;
