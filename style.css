@@ -239,6 +239,7 @@ h2 {
 .dot-logo img {
   max-width: 24px;
   max-height: 24px;
+  border: 8px
 }
 
 .timeline-item:hover .dot-logo {
