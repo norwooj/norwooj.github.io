@@ -173,7 +173,7 @@ h2 {
 
 .dot-logo {
   position: absolute;
-  left: 43px;                 /* same as .timeline::before left */
+  left: 42px;                 /* same as .timeline::before left */
   top: 22px;                  /* tweak this to vertically align with content */
   width: 60px;
   height: 60px;
