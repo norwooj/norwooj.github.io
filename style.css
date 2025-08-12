@@ -492,8 +492,7 @@ footer {
 
 
   .timeline::before { 
-    left: 28px; 
-    width: 3px; 
+    left: 28px;  
   }
 
   .timeline-item { 
@@ -502,14 +501,5 @@ footer {
 
   .dot-logo { 
     left: 28px; 
-    width: 34px; 
-    height: 34px; 
-    top: 18px; 
-    transform: translateX(-50%); 
-  }
-  
-  .dot-logo img { 
-    width: 65%; 
-    height: 65%; 
   }
 }
