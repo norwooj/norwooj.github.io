@@ -175,8 +175,8 @@ h2 {
   position: absolute;
   left: 42px;                 /* same as .timeline::before left */
   top: 22px;                  /* tweak this to vertically align with content */
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   transform: translateX(-50%);/* centers the dot around the "left" coordinate */
   border-radius: 50%;
   overflow: hidden;
@@ -190,8 +190,8 @@ h2 {
 }
 
 .dot-logo img {
-  width: 70%;
-  height: 70%;
+  width: 75%;
+  height: 75%;
   object-fit: contain;
   display: block;
 }
@@ -209,7 +209,7 @@ h2 {
 .timeline-content::before {
   content: "";
   position: absolute;
-  top: 28px; /* adjust until it points at dot center */
+  top: 30px; /* adjust until it points at dot center */
   left: -15px;
   border-width: 10px 15px 10px 0;
   border-style: solid;
