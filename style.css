@@ -166,10 +166,10 @@ h2 {
 .timeline-item {
   position: relative;
   margin-bottom: 1.5rem;
-  padding-left: 50px;
+  padding-left: 60px; /* more space for bigger dot/logo */
   background: rgba(30, 30, 30, 0.6);
   border-radius: 8px;
-  padding: 1rem 1rem 1rem 50px;
+  padding: 1rem 1rem 1rem 60px;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -178,17 +178,16 @@ h2 {
   transform: translateY(-2px);
 }
 
-.timeline-item::before {
+.timeline::before {
   content: '';
   position: absolute;
-  left: 6px;
-  top: 20px;
-  width: 14px;
-  height: 14px;
-  background: #4cafef;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(76, 175, 239, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  left: 30px; /* center line moved a bit right */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #4cafef, #82aaff);
+  box-shadow: 0 0 6px rgba(76, 175, 239, 0.6);
+  z-index: 0;
 }
 
 .timeline-item:hover::before {
@@ -220,12 +219,33 @@ h2 {
   line-height: 1.5;
 }
 
-/*
-.timeline-content:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+.dot-logo {
+  position: absolute;
+  left: 15px;  /* centers dot/logo over timeline line */
+  top: 24px;   /* aligns vertically with heading, adjust as needed */
+  width: 36px;
+  height: 36px;
+  background: #4cafef;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(76, 175, 239, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #121212; /* border to separate logo from background */
 }
-*/
+
+.dot-logo img {
+  max-width: 24px;
+  max-height: 24px;
+  filter: brightness(0) invert(1); /* makes sure logo is white, adjust if needed */
+}
+
+.timeline-item:hover .dot-logo {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(76, 175, 239, 1);
+}
 
 .project-grid {
   display: grid;
