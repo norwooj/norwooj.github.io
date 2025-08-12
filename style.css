@@ -150,7 +150,6 @@ h2 {
   max-width: 1200px;
   margin: 0 auto;
   padding-left: 50%;
-  box-sizing: border-box;
 }
 
 .timeline::after {
@@ -170,58 +169,26 @@ h2 {
   position: relative;
   width: 50%;
   padding: 10px 40px;
-  background-color: inherit;
   left: 50%;
-}
-
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  left: -16px;
-  background-color: white;
-  top: 15px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(170, 170, 170, 0.8);
-  border: 3px solid #1e1e1e; /* optional colored ring */
-  z-index: 1;
-  background-size: 24px 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.timeline-item::before {
-  content: " ";
-  position: absolute;
-  top: 22px;
-  width: 0;
-  height: 0;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-right-color: white;
-  z-index: 1;
 }
 
 .timeline-content {
   background-color: #1e1e1e;
   padding: 20px 30px;
   border-radius: 6px;
-  position: relative;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   color: #ccc;
-  margin-left: 70px;
 }
 
 .dot-logo {
   position: absolute;
-  left: -16px; /* same as dot size */
-  top: 25px;
-  width: 25px;
-  height: 25px;
+  left: -38px; /* same as dot size */
+  top: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
+  background: white;
   box-shadow: 0 0 8px rgba(170,170,170,0.8);
   z-index: 2;
 }
