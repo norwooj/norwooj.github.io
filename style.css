@@ -209,7 +209,7 @@ h2 {
 .timeline-content::before {
   content: "";
   position: absolute;
-  top: 34px; /* adjust until it points at dot center */
+  top: 28px; /* adjust until it points at dot center */
   left: -15px;
   border-width: 10px 15px 10px 0;
   border-style: solid;
