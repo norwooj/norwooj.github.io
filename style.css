@@ -225,7 +225,7 @@ h2 {
   top: 24px;   /* aligns vertically with heading, adjust as needed */
   width: 36px;
   height: 36px;
-  background: #4cafef;
+  background: white;
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(76, 175, 239, 0.8);
   display: flex;
