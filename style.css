@@ -350,6 +350,18 @@ h2 {
   right: 0.5rem;
 }
 
+.carousel-images blockquote.instagram-media {
+  width: 100% !important;    /* Instagram adds inline width */
+  height: 100% !important;
+  display: flex !important;  /* ensures it respects flex centering */
+}
+
+.carousel-images blockquote.instagram-media + .prev,
+.carousel-images blockquote.instagram-media + .next {
+  left: 1rem;   /* or use JS to detect Instagram slides and offset arrows */
+  right: 1rem;
+}
+
 .tags {
   margin-top: 0.5rem;
   display: flex;
