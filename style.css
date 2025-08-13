@@ -351,12 +351,22 @@ h2 {
 }
 
 .instagram-wrapper {
-  width: 90%;             /* desired narrower width */
-  height: auto;
-  margin: 0 auto;         /* center horizontally */
-  padding: 0 1rem;        /* adds gaps on left and right */
+  max-width: 40%;            /* make it skinnier than carousel width */
+  height: 90vh;              /* match carousel slide height */
+  display: flex;
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* center vertically */
+  margin: 0 auto;             /* center in the carousel */
+  padding: 0 1rem;            /* gap between carousel arrows and embed */
   box-sizing: border-box;
 }
+
+.instagram-wrapper blockquote.instagram-media {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+}
+
 
 .tags {
   margin-top: 0.5rem;
