@@ -769,24 +769,16 @@
             <button class="prev">&#10094;</button>
             <div class="carousel-images">
               <iframe src="https://www.princetonelectricspeedboating.com/" width="100%" height="600px" style="border:none;"></iframe>
-              <div class="instagram-wrapper">
-                <blockquote class="instagram-media" 
-                  data-instgrm-permalink="https://www.instagram.com/p/DH1hxZLxzhe/" 
-                  data-instgrm-version="14">
-                </blockquote>
-              </div>
-              <div class="instagram-wrapper">
-                <blockquote class="instagram-media" 
-                  data-instgrm-permalink="https://www.instagram.com/p/C5_0KUuMw0N/?img_index=1" 
-                  data-instgrm-version="14">
-                </blockquote>
-              </div>
-              <div class="instagram-wrapper">
-                <blockquote class="instagram-media" 
-                  data-instgrm-permalink="https://www.instagram.com/p/DBtdlUsKShN/?img_index=8" 
-                  data-instgrm-version="14">
-                </blockquote>
-              </div>
+              <iframe
+                src="https://youtu.be/embed/PLK3Oq104jw"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="P-AgBot Functionality"
+              ></iframe>
+              <img src="images/PES_Big_Bird_Competition_Group_Photo.jpg" alt="PES Big Bird Competition Group Photo" />
+              <img src="images/PES_Victory_Group_Photo.jpg" alt="PES Victory Group Photo" />
+              <img src="images/PES_Stem_to_Stern_Photo.jpg" alt="PES Stem to Stern Photo" />
               <img src="images/World_Record_Big_Bird.JPG" alt="World Record Big Bird" />
             </div>
             <button class="next">&#10095;</button>
@@ -844,8 +836,6 @@
   <footer>
     <p>© 2025 Joseph Norwood. All rights reserved.</p>
   </footer>
-
-  <script async src="//www.instagram.com/embed.js"></script>
 
   <script>
     const toggleButton = document.querySelector('.menu-toggle');
@@ -925,66 +915,6 @@
       window.addEventListener('load', updateCarousel);
       window.addEventListener('resize', updateHeight);
     });
-  </script>
-
-  <script>
-    // Set how "skinny" IG is allowed to be (fraction of slide width)
-    const IG_MAX_WIDTH_FRACTION = 0.60; // 60% of slide width visible
-
-    function fitInstagram(el){
-      const wrapper = el.closest('.instagram-wrapper');
-      if(!wrapper) return;
-
-      // Ensure IG has rendered (it injects content async)
-      const measureAndScale = () => {
-        const r = el.getBoundingClientRect();
-        if (r.width === 0 || r.height === 0) {
-          requestAnimationFrame(measureAndScale);
-          return;
-        }
-        const wrapperStyles = getComputedStyle(wrapper);
-        const gutters = parseFloat(wrapperStyles.paddingLeft) + parseFloat(wrapperStyles.paddingRight);
-
-        const maxWidthPixels = (wrapper.clientWidth - gutters) * IG_MAX_WIDTH_FRACTION;
-        const scaleByHeight = wrapper.clientHeight / r.height;
-        const scaleByWidth  = maxWidthPixels / r.width;
-
-        const scale = Math.min(scaleByHeight, scaleByWidth);
-        el.style.transform = `scale(${scale})`;
-      };
-
-      // Run once and also re-run if IG mutates its layout
-      measureAndScale();
-      const mo = new MutationObserver(measureAndScale);
-      mo.observe(el, {attributes:true, childList:true, subtree:true});
-      window.addEventListener('resize', measureAndScale);
-    }
-
-    // Fit all IG embeds currently on the page
-    function fitAllInstagram(){
-      document.querySelectorAll('.instagram-wrapper .instagram-media').forEach(fitInstagram);
-    }
-
-    // Fit only the current slide (call this after you change slides)
-    function fitCurrentInstagram(){
-      const current = document.querySelector('.carousel-images > *[style*="translateX(-"][style*="100%"]'); // fallback if you track index differently
-      // If you track the index in JS, just use that to locate the active slide instead:
-      document.querySelectorAll('.instagram-wrapper .instagram-media').forEach(el => {
-        // scale whichever IG is visible in the current slide viewport
-        fitInstagram(el);
-      });
-    }
-
-    // After IG script processes, do initial fit
-    window.addEventListener('load', () => {
-      if (window.instgrm) instgrm.Embeds.process();
-      // small delay so IG finishes injecting sizes
-      setTimeout(fitAllInstagram, 400);
-    });
-
-    // IMPORTANT: after your carousel next/prev changes slides:
-    //  - call: if (window.instgrm) instgrm.Embeds.process();
-    //  - then call: fitCurrentInstagram();
   </script>
 </body>
 </html>
