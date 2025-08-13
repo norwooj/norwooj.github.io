@@ -352,6 +352,7 @@ h2 {
 
 .instagram-wrapper {
   width: 90%;             /* desired narrower width */
+  height: auto;
   margin: 0 auto;         /* center horizontally */
   padding: 0 1rem;        /* adds gaps on left and right */
   box-sizing: border-box;
