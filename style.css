@@ -350,27 +350,25 @@ h2 {
   right: 0.5rem;
 }
 
-.instagram-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 600px; /* match your iframe carousel height */
-  padding: 0 60px; /* gap so arrows don't overlap */
-  box-sizing: border-box;
+/* Make each IG slide a full-height, centered, clipped box with side gutters */
+.instagram-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height: clamp(420px, 90vh, 900px);
+  padding: 0 64px;             /* space for your arrows */
+  box-sizing:border-box;
+  overflow:hidden;              /* hide any horizontal overflow after scaling */
+  background:black;
 }
 
-/* Target the Instagram embed itself */
-.instagram-wrapper iframe {
-  transform: scale(1.4); /* scale it bigger */
-  transform-origin: center center;
-  width: auto !important; /* don't force 100% width */
-  height: auto !important;
-}
-
-/* Remove Instagram's default max-width restriction */
-.instagram-wrapper > * {
-  max-width: none !important;
-  height: auto !important;
+/* Kill IG’s inline max/min widths and let us transform it */
+.instagram-wrapper .instagram-media{
+  margin:0 !important;
+  max-width:none !important;
+  min-width:0 !important;
+  width:auto !important;
+  transform-origin:center center;
 }
 
 .tags {
