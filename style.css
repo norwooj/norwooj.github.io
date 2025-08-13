@@ -351,15 +351,10 @@ h2 {
 }
 
 .carousel-images blockquote.instagram-media {
-  width: 100% !important;    /* Instagram adds inline width */
-  height: 100% !important;
-  display: flex !important;  /* ensures it respects flex centering */
-}
-
-.carousel-images blockquote.instagram-media + .prev,
-.carousel-images blockquote.instagram-media + .next {
-  left: 1rem;   /* or use JS to detect Instagram slides and offset arrows */
-  right: 1rem;
+  width: 60%;           /* make it narrower */
+  height: auto !important;
+  margin: 0 auto;       /* center horizontally */
+  display: flex !important;
 }
 
 .tags {
