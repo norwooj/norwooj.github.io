@@ -351,7 +351,7 @@ h2 {
 }
 
 .carousel-images blockquote.instagram-media {
-  width: 50%;           /* make it narrower */
+  width: 20%;           /* make it narrower */
   max-width: 500px;        /* optional: cap the width */
   height: auto !important;
   margin: 0 auto;       /* center horizontally */
