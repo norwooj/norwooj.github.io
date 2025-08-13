@@ -350,12 +350,11 @@ h2 {
   right: 0.5rem;
 }
 
-.carousel-images blockquote.instagram-media {
-  width: 20%;           /* make it narrower */
-  max-width: 500px;        /* optional: cap the width */
-  height: auto !important;
-  margin: 0 auto;       /* center horizontally */
-  display: flex !important;
+.instagram-wrapper {
+  width: 40%;             /* desired narrower width */
+  margin: 0 auto;         /* center horizontally */
+  padding: 0 1rem;        /* adds gaps on left and right */
+  box-sizing: border-box;
 }
 
 .tags {
