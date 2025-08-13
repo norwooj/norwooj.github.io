@@ -854,7 +854,9 @@
     toggleButton.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
+  </script>
 
+  <script>
     // Convert NodeList of carousels to an array
     Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
       const imagesContainer = carousel.querySelector('.carousel-images');
@@ -924,5 +926,65 @@
       window.addEventListener('resize', updateHeight);
     });
   </script>
+
+  <script>
+    // Set how "skinny" IG is allowed to be (fraction of slide width)
+    const IG_MAX_WIDTH_FRACTION = 0.60; // 60% of slide width visible
+
+    function fitInstagram(el){
+      const wrapper = el.closest('.instagram-wrapper');
+      if(!wrapper) return;
+
+      // Ensure IG has rendered (it injects content async)
+      const measureAndScale = () => {
+        const r = el.getBoundingClientRect();
+        if (r.width === 0 || r.height === 0) {
+          requestAnimationFrame(measureAndScale);
+          return;
+        }
+        const wrapperStyles = getComputedStyle(wrapper);
+        const gutters = parseFloat(wrapperStyles.paddingLeft) + parseFloat(wrapperStyles.paddingRight);
+
+        const maxWidthPixels = (wrapper.clientWidth - gutters) * IG_MAX_WIDTH_FRACTION;
+        const scaleByHeight = wrapper.clientHeight / r.height;
+        const scaleByWidth  = maxWidthPixels / r.width;
+
+        const scale = Math.min(scaleByHeight, scaleByWidth);
+        el.style.transform = `scale(${scale})`;
+      };
+
+      // Run once and also re-run if IG mutates its layout
+      measureAndScale();
+      const mo = new MutationObserver(measureAndScale);
+      mo.observe(el, {attributes:true, childList:true, subtree:true});
+      window.addEventListener('resize', measureAndScale);
+    }
+
+    // Fit all IG embeds currently on the page
+    function fitAllInstagram(){
+      document.querySelectorAll('.instagram-wrapper .instagram-media').forEach(fitInstagram);
+    }
+
+    // Fit only the current slide (call this after you change slides)
+    function fitCurrentInstagram(){
+      const current = document.querySelector('.carousel-images > *[style*="translateX(-"][style*="100%"]'); // fallback if you track index differently
+      // If you track the index in JS, just use that to locate the active slide instead:
+      document.querySelectorAll('.instagram-wrapper .instagram-media').forEach(el => {
+        // scale whichever IG is visible in the current slide viewport
+        fitInstagram(el);
+      });
+    }
+
+    // After IG script processes, do initial fit
+    window.addEventListener('load', () => {
+      if (window.instgrm) instgrm.Embeds.process();
+      // small delay so IG finishes injecting sizes
+      setTimeout(fitAllInstagram, 400);
+    });
+
+    // IMPORTANT: after your carousel next/prev changes slides:
+    //  - call: if (window.instgrm) instgrm.Embeds.process();
+    //  - then call: fitCurrentInstagram();
+</script>
 </body>
 </html>
