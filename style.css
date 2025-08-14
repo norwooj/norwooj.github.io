@@ -287,7 +287,22 @@ h2 {
   border-radius: 8px;
   flex: 1 1 45%; /* Make images/videos take roughly half the card width, wrap on small screens */
   object-fit: cover;
-  margin-bottom: 1rem;
+}
+
+/* Hide paragraph text initially */
+.project-card p {
+  opacity: 0;
+  max-height: 0;           /* optional: collapses the space */
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  margin-top: 0;
+}
+
+/* Reveal paragraph text on hover */
+.project-card:hover p {
+  opacity: 1;
+  max-height: 500px;       /* large enough to fit your content */
+  margin-top: 1rem;
 }
 
 .status {
