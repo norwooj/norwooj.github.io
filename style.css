@@ -287,6 +287,7 @@ h2 {
   border-radius: 8px;
   flex: 1 1 45%; /* Make images/videos take roughly half the card width, wrap on small screens */
   object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 .status {
