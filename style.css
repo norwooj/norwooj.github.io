@@ -294,7 +294,7 @@ h2 {
   opacity: 0;
   max-height: 0;           /* optional: collapses the space */
   overflow: hidden;
-  transition: opacity 0.5s ease, max-height 0.5s ease;
+  transition: opacity 1s ease, max-height 1s ease;
   margin-top: 0;
 }
 
