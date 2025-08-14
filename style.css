@@ -297,7 +297,8 @@ h2 {
   background-color: rgba(170, 170, 170, 0.15); /* light translucent grey background */
   border-radius: 12px;
   padding: 0.2rem 0.6rem;
-  margin-top: 0.75rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
   user-select: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* subtle shadow, lighter for grey */
 }
