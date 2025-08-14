@@ -140,6 +140,7 @@ section {
 }
 
 h2 {
+  margin-top: 3rem;
   margin-bottom: 1rem;
   color: #e0e0e0;
   font-weight: 600;
@@ -417,6 +418,27 @@ footer {
 .button:hover {
   background: #e0e0e0;
 } 
+
+/* General transitions for links, buttons, and cards */
+a, .button, .project-card {
+  transition: all 0.3s ease;
+}
+
+/* On hover, lift project card slightly */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+/* Links color fade */
+nav ul li a {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
 
 /* Mobile View */
 
