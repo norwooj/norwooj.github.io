@@ -137,7 +137,10 @@ nav ul li a:hover {
 
 section {
   padding: 1rem;
-  padding-top: 2rem;
+}
+
+section h2:not(#hero h2) {
+  margin-top: 3rem
 }
 
 h2 {
