@@ -255,6 +255,7 @@ h2 {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
 
 .project-card h3 {
@@ -457,6 +458,12 @@ nav ul li a:hover {
       opacity 1s ease, 
       max-height 1s ease, 
       margin-top 0.5s ease;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
   }
 
   /* Reveal paragraph text on hover */
@@ -464,6 +471,8 @@ nav ul li a:hover {
     opacity: 1;
     max-height: 500px;       /* large enough to fit your content */
     margin-top: 1rem;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 }
 
