@@ -289,17 +289,6 @@ h2 {
   border-radius: 8px;
   flex: 1 1 45%; /* Make images/videos take roughly half the card width, wrap on small screens */
   object-fit: cover;
-  opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  transition: 
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
-}
-
-.project-card .media.visible img,
-.project-card .media.visible video {
-  opacity: 1;
-  transform: translateY(0) scale(1);
 }
 
 .status {
