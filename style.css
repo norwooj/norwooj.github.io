@@ -260,19 +260,6 @@ h2 {
   position: relative;
 }
 
-.project-card::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3rem; /* adjust how much fade */
-  background: linear-gradient(to bottom, rgba(30,30,30,0), rgba(30,30,30,1));
-  pointer-events: none;
-  transition: opacity 1s ease;
-  opacity: 1; /* visible by default */
-}
-
 .project-card h3 {
   margin-bottom: 0rem;
 }
@@ -464,36 +451,35 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
   }
 
-  .project-card:hover::after {
-    opacity: 0; /* fade out overlay when hovering/expanding */
-  }
-
   /* Hide paragraph text initially */
   .project-card p:not(.status) {
     opacity: 0;
-    max-height: 0;           /* optional: collapses the space */
+    max-height: 0;
     margin-top: 0;
-    transition: 
-      opacity 1s ease, 
-      max-height 1s ease, 
-      margin-top 0.5s ease;
+    transition: opacity 1s ease, max-height 1s ease, margin-top 0.5s ease;
+
+    /* Add gradient fade at bottom */
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
   }
 
   /* Reveal paragraph text on hover */
   .project-card:hover p:not(.status) {
     opacity: 1;
-    max-height: 500px;       /* large enough to fit your content */
+    max-height: 500px; /* large enough for content */
     margin-top: 1rem;
-    mask-image: none;
+
+    /* Remove mask so full text shows */
     -webkit-mask-image: none;
+    mask-image: none;
   }
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .project-card::after {
-    display: none;
-  }
-
   .project-card p:not(.status) {
     opacity: 1;
     max-height: 500px;
