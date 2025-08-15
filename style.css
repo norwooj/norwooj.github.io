@@ -248,6 +248,8 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
+  align-items: start;
+  grid-auto-rows: auto;
 }
 
 .project-card {
@@ -278,6 +280,8 @@ h2 {
   gap: 1rem;
   justify-content: center;
   margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card .media img,
@@ -289,23 +293,18 @@ h2 {
   object-fit: cover;
 }
 
-/* Hide paragraph text initially */
-.project-card p:not(.status) {
+/* Paragraph starts hidden below the image */
+.project-card .media + p:not(.status) {
   opacity: 0;
-  max-height: 0;           /* optional: collapses the space */
-  overflow: hidden;
-  margin-top: 0;
-  transition: 
-    opacity 1s ease, 
-    max-height 1s ease, 
-    margin-top 0.5s ease;
+  transform: translateY(100%); /* completely below the image */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  margin-top: 0; /* no extra gap here */
 }
 
-/* Reveal paragraph text on hover */
-.project-card:hover p:not(.status) {
+/* On hover, it slides up into place */
+.project-card:hover .media + p:not(.status) {
   opacity: 1;
-  max-height: 500px;       /* large enough to fit your content */
-  margin-top: 1rem;
+  transform: translateY(0);
 }
 
 .status {
