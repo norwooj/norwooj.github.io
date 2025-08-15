@@ -291,25 +291,6 @@ h2 {
   object-fit: cover;
 }
 
-/* Hide paragraph text initially */
-.project-card p:not(.status) {
-  opacity: 0;
-  max-height: 0;           /* optional: collapses the space */
-  overflow: hidden;
-  margin-top: 0;
-  transition: 
-    opacity 1s ease, 
-    max-height 1s ease, 
-    margin-top 0.5s ease;
-}
-
-/* Reveal paragraph text on hover */
-.project-card:hover p:not(.status) {
-  opacity: 1;
-  max-height: 500px;       /* large enough to fit your content */
-  margin-top: 1rem;
-}
-
 .status {
   display: inline-block;
   font-size: 0.8rem;
@@ -402,6 +383,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  justify-content: center;
 }
 
 .tag {
@@ -449,12 +431,6 @@ a, .button, .project-card {
   transition: all 0.3s ease;
 }
 
-/* On hover, lift project card slightly */
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-}
-
 /* Links color fade */
 nav ul li a {
   transition: color 0.3s ease, transform 0.2s ease;
@@ -463,6 +439,33 @@ nav ul li a {
 nav ul li a:hover {
   color: #fff;
   transform: scale(1.05);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* On hover, lift project card slightly */
+  .project-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    z-index: 10;
+  }
+
+  /* Hide paragraph text initially */
+  .project-card p:not(.status) {
+    opacity: 0;
+    max-height: 0;           /* optional: collapses the space */
+    margin-top: 0;
+    transition: 
+      opacity 1s ease, 
+      max-height 1s ease, 
+      margin-top 0.5s ease;
+  }
+
+  /* Reveal paragraph text on hover */
+  .project-card:hover p:not(.status) {
+    opacity: 1;
+    max-height: 500px;       /* large enough to fit your content */
+    margin-top: 1rem;
+  }
 }
 
 /* Mobile View */
