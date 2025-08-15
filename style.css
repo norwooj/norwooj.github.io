@@ -557,4 +557,10 @@ nav ul li a:hover {
     font-size: clamp(1rem, 4.4vw, 1.5rem);
     margin-top: 1rem;
   }
+
+  .project-card p:not(.status) {
+    opacity: 1;
+    max-height: 500px;
+    margin-top: 1rem;
+  }
 }
