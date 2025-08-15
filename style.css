@@ -505,9 +505,9 @@ nav ul li a:hover {
   max-height: 20rem; /* expanded height */
   opacity: 1;
 
-  /* Keep gradient while expanding */
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
-  mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+  /* Remove gradient when expanded */
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 /* Tags always visible at bottom */
