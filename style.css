@@ -451,14 +451,13 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
   }
 
-  /* Hide paragraph text initially */
   .project-card p:not(.status) {
     opacity: 0;
     max-height: 0;
     margin-top: 0;
     transition: opacity 1s ease, max-height 1s ease, margin-top 0.5s ease;
 
-    /* Add gradient fade at bottom */
+    /* Fade at bottom while expanding */
     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
@@ -467,15 +466,14 @@ nav ul li a:hover {
     mask-size: 100% 100%;
   }
 
-  /* Reveal paragraph text on hover */
   .project-card:hover p:not(.status) {
     opacity: 1;
-    max-height: 500px; /* large enough for content */
+    max-height: 500px; /* content height */
     margin-top: 1rem;
 
-    /* Remove mask so full text shows */
-    -webkit-mask-image: none;
-    mask-image: none;
+    /* Keep the gradient as it expands */
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+    mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
   }
 }
 
