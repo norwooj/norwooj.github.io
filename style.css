@@ -371,19 +371,17 @@ h2 {
   right: 0.5rem;
 }
 
-/* Make each IG slide a full-height, centered, clipped box with side gutters */
 .instagram-wrapper{
   display:flex;
   align-items:center;
   justify-content:center;
   height: clamp(420px, 90vh, 900px);
-  padding: 0 64px;             /* space for your arrows */
+  padding: 0 64px;
   box-sizing:border-box;
-  overflow:hidden;              /* hide any horizontal overflow after scaling */
+  overflow:hidden;
   background:black;
 }
 
-/* Kill IG’s inline max/min widths and let us transform it */
 .instagram-wrapper .instagram-media{
   margin:0 !important;
   max-width:none !important;
