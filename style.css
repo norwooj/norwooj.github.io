@@ -168,24 +168,23 @@ h2 {
 }
 
 .timeline-item {
-  position: relative;         /* contains the absolutely-positioned dot */
+  position: relative;
   width: 100%;
   max-width: 900;
   margin: 0 auto 18px;
-  padding: 14px 20px 14px 90px; /* left padding reserves space for line+dot */
+  padding: 14px 20px 14px 90px;
   box-sizing: border-box;
 }
 
 .dot-logo {
   position: absolute;
-  left: 43px;                 /* same as .timeline::before left */
-  top: 22px;                  /* tweak this to vertically align with content */
-  width: 60px;
+  left: 43px;
+  top: 22px;
   height: 60px;
-  transform: translateX(-50%);/* centers the dot around the "left" coordinate */
+  transform: translateX(-50%);
   border-radius: 50%;
   overflow: hidden;
-  background: #fff;           /* keeps SVGs visible if they are transparent */
+  background: #fff;
   border: 3px solid #ccc;
   box-shadow: 0 0 8px #ccc;
   z-index: 2;
@@ -208,14 +207,14 @@ h2 {
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   color: #ccc;
   position: relative;
-  margin: 0; /* content is positioned by the timeline-item padding */
+  margin: 0;
   text-align: left;
 }
 
 .timeline-content::before {
   content: "";
   position: absolute;
-  top: 28px; /* adjust until it points at dot center */
+  top: 28px;
   left: -15px;
   border-width: 10px 15px 10px 0;
   border-style: solid;
@@ -223,13 +222,13 @@ h2 {
 }
 
 .timeline-content ul {
-  margin: 0 0 0.5rem 0;      /* ✅ remove big default margin */
-  padding-left: 1.25rem;     /* ✅ controlled indent so bullets line up */
+  margin: 0 0 0.5rem 0;
+  padding-left: 1.25rem;
 }
 
 .timeline-content li {
-  margin-bottom: 0.5rem;     /* ✅ space between bullet items */
-  line-height: 1.6;          /* ✅ make them more readable */
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
 }
 
 .timeline-item h3 {
@@ -302,7 +301,7 @@ h2 {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  flex: 1 1 45%; /* Make images/videos take roughly half the card width, wrap on small screens */
+  flex: 1 1 45%;
   object-fit: cover;
 }
 
@@ -310,14 +309,14 @@ h2 {
   display: inline-block;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #aaa; /* soft grey text */
-  background-color: rgba(170, 170, 170, 0.15); /* light translucent grey background */
+  color: #aaa;
+  background-color: rgba(170, 170, 170, 0.15);
   border-radius: 12px;
   padding: 0.2rem 0.6rem;
   margin-top: 0.3rem;
   margin-bottom: 1rem;
   user-select: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* subtle shadow, lighter for grey */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .carousel {
@@ -334,12 +333,12 @@ h2 {
 }
 
 .carousel-images > * {
-  flex: 0 0 100%;           /* every slide is full carousel width */
+  flex: 0 0 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;             /* fixed vertical space for all slides */
-  background: black;        /* so letterboxing blends in */
+  height: 90vh;
+  background: black;
 }
 
 .carousel-images img,
