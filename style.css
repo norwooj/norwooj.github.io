@@ -170,10 +170,9 @@ h2 {
 .timeline-item {
   position: relative;
   width: 100%;
-  max-width: 900;
-  margin: 0 auto 18px;
-  padding: 14px 20px 14px 90px;
+  padding: 14px 24px 14px 80px;
   box-sizing: border-box;
+  margin-bottom: 18px;
 }
 
 .dot-logo {
