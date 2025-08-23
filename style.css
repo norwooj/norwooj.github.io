@@ -173,7 +173,6 @@ h2 {
   padding: 14px 20px 14px 90px; /* left padding reserves space for line+dot */
   box-sizing: border-box;
   margin-bottom: 18px;
-  align-items: left;
 }
 
 .dot-logo {
@@ -209,6 +208,7 @@ h2 {
   color: #ccc;
   position: relative;
   margin: 0; /* content is positioned by the timeline-item padding */
+  text-align: left;
 }
 
 .timeline-content::before {
