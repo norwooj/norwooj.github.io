@@ -170,9 +170,10 @@ h2 {
 .timeline-item {
   position: relative;         /* contains the absolutely-positioned dot */
   width: 100%;
+  max-width: 900;
+  margin: 0 auto 18px;
   padding: 14px 20px 14px 90px; /* left padding reserves space for line+dot */
   box-sizing: border-box;
-  margin-bottom: 18px;
 }
 
 .dot-logo {
@@ -202,7 +203,7 @@ h2 {
 
 .timeline-content {
   background-color: #1e1e1e;
-  padding: 18px 20px;
+  padding: 22px 26px;
   border-radius: 6px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   color: #ccc;
@@ -219,6 +220,16 @@ h2 {
   border-width: 10px 15px 10px 0;
   border-style: solid;
   border-color: transparent #1e1e1e transparent transparent;
+}
+
+.timeline-content ul {
+  margin: 0 0 0.5rem 0;      /* ✅ remove big default margin */
+  padding-left: 1.25rem;     /* ✅ controlled indent so bullets line up */
+}
+
+.timeline-content li {
+  margin-bottom: 0.5rem;     /* ✅ space between bullet items */
+  line-height: 1.6;          /* ✅ make them more readable */
 }
 
 .timeline-item h3 {
