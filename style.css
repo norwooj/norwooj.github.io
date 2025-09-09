@@ -505,7 +505,7 @@ nav ul li a:hover {
 }
 
 .project-card:hover .text {
-  max-height: 20rem;
+  max-height: 50rem;
   opacity: 1;
 }
 
