@@ -492,7 +492,7 @@ nav ul li a:hover {
 @media (hover: none) and (pointer: coarse) {
   .project-card p:not(.status) {
     opacity: 1;
-    max-height: 500px;
+    max-height: 1000px;
     margin-top: 1rem;
   }
 }
