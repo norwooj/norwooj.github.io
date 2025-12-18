@@ -341,15 +341,6 @@ h2 {
   align-items: center;
 }
 
-/* .carousel-images > * {
-  flex: 0 0 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  background: black;
-} */
-
 .carousel-images img,
 .carousel-images video,
 .carousel-images iframe {
