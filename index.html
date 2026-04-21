@@ -1106,52 +1106,48 @@
 
   <script>
     Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
-      const imagesContainer = carousel.querySelector('.carousel-images');
-      if (!imagesContainer) return;
+      const track = carousel.querySelector('.carousel-images');
+      if (!track) return;
 
-      const images = Array.from(imagesContainer.children);
-      const imageCount = images.length;
+      const slides = Array.from(track.children);
+      const count = slides.length;
       let index = 0;
 
       const updateHeight = () => {
-        const currentSlide = images[index];
-        if (!currentSlide) return;
-        const containerWidth = carousel.offsetWidth;
-        let newHeight;
-        if (currentSlide.tagName === "IMG") {
-          const { naturalWidth, naturalHeight } = currentSlide;
-          if (!naturalWidth) return;
-          newHeight = (naturalHeight / naturalWidth) * containerWidth;
-        } else if (currentSlide.tagName === "IFRAME") {
-          newHeight = containerWidth * 0.5625;
+        const slide = slides[index];
+        if (!slide) return;
+        const w = track.clientWidth;
+        let h;
+        if (slide.tagName === 'IMG') {
+          if (!slide.naturalWidth) return;
+          h = (slide.naturalHeight / slide.naturalWidth) * w;
+        } else if (slide.tagName === 'IFRAME') {
+          h = w * 0.5625;
         }
-        if (newHeight) {
-          carousel.style.height = newHeight + 'px';
-          imagesContainer.style.height = newHeight + 'px';
-        }
+        if (h) track.style.height = h + 'px';
       };
 
-      const updateCarousel = () => {
-        const slideWidth = carousel.offsetWidth;
-        imagesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
+      const goTo = (i) => {
+        index = (i + count) % count;
+        track.scrollTo({ left: index * track.clientWidth, behavior: 'smooth' });
         updateHeight();
       };
 
-      const prevBtn = carousel.querySelector('.prev');
-      const nextBtn = carousel.querySelector('.next');
-      if (prevBtn) prevBtn.addEventListener('click', () => { index = (index - 1 + imageCount) % imageCount; updateCarousel(); });
-      if (nextBtn) nextBtn.addEventListener('click', () => { index = (index + 1) % imageCount; updateCarousel(); });
+      const prev = carousel.querySelector('.prev');
+      const next = carousel.querySelector('.next');
+      if (prev) prev.addEventListener('click', () => goTo(index - 1));
+      if (next) next.addEventListener('click', () => goTo(index + 1));
 
-      images.forEach(slide => {
-        if (slide.tagName === "IMG") {
-          slide.addEventListener("load", () => { if (images[index] === slide) updateHeight(); });
-        } else if (slide.tagName === "IFRAME") {
-          slide.addEventListener("load", updateHeight);
+      slides.forEach(slide => {
+        if (slide.tagName === 'IMG') {
+          slide.addEventListener('load', () => { if (slides[index] === slide) updateHeight(); });
+        } else if (slide.tagName === 'IFRAME') {
+          slide.addEventListener('load', updateHeight);
         }
       });
 
-      window.addEventListener('load', updateCarousel);
-      window.addEventListener('resize', updateCarousel);
+      window.addEventListener('load', updateHeight);
+      window.addEventListener('resize', updateHeight);
     });
   </script>
 </html>
