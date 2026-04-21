@@ -1116,18 +1116,15 @@
       const updateHeight = () => {
         const currentSlide = images[index];
         if (!currentSlide) return;
-
-        const containerWidth = imagesContainer.clientWidth;
+        const containerWidth = carousel.offsetWidth;
         let newHeight;
-
         if (currentSlide.tagName === "IMG") {
           const { naturalWidth, naturalHeight } = currentSlide;
           if (!naturalWidth) return;
           newHeight = (naturalHeight / naturalWidth) * containerWidth;
         } else if (currentSlide.tagName === "IFRAME") {
-          newHeight = containerWidth * 0.5625; // 16:9
+          newHeight = containerWidth * 0.5625;
         }
-
         if (newHeight) {
           carousel.style.height = newHeight + 'px';
           imagesContainer.style.height = newHeight + 'px';
@@ -1135,39 +1132,26 @@
       };
 
       const updateCarousel = () => {
-        imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+        const slideWidth = carousel.offsetWidth;
+        imagesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
         updateHeight();
       };
 
       const prevBtn = carousel.querySelector('.prev');
       const nextBtn = carousel.querySelector('.next');
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          index = (index - 1 + imageCount) % imageCount;
-          updateCarousel();
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          index = (index + 1) % imageCount;
-          updateCarousel();
-        });
-      }
+      if (prevBtn) prevBtn.addEventListener('click', () => { index = (index - 1 + imageCount) % imageCount; updateCarousel(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { index = (index + 1) % imageCount; updateCarousel(); });
 
       images.forEach(slide => {
         if (slide.tagName === "IMG") {
-          slide.addEventListener("load", () => {
-            if (images[index] === slide) updateHeight();
-          });
+          slide.addEventListener("load", () => { if (images[index] === slide) updateHeight(); });
         } else if (slide.tagName === "IFRAME") {
           slide.addEventListener("load", updateHeight);
         }
       });
 
       window.addEventListener('load', updateCarousel);
-      window.addEventListener('resize', updateHeight);
+      window.addEventListener('resize', updateCarousel);
     });
   </script>
 </html>
