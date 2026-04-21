@@ -1105,44 +1105,38 @@
   </script>
 
   <script>
-    // Convert NodeList of carousels to an array
     Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
       const imagesContainer = carousel.querySelector('.carousel-images');
-      if(!imagesContainer) return;
+      if (!imagesContainer) return;
 
-      // Convert HTMLCollection of slides to an array
       const images = Array.from(imagesContainer.children);
       const imageCount = images.length;
       let index = 0;
 
-      // Function to update carousel position AND container height
-      const updateCarousel = () => {
-        imagesContainer.style.transform = `translateX(-${index * 100}%)`;
-        updateHeight();
-      };
-
-      // Update height of images container to current image height scaled to container width
       const updateHeight = () => {
         const currentSlide = images[index];
         if (!currentSlide) return;
 
         const containerWidth = imagesContainer.clientWidth;
+        let newHeight;
 
         if (currentSlide.tagName === "IMG") {
-          const naturalWidth = currentSlide.naturalWidth;
-          const naturalHeight = currentSlide.naturalHeight;
-          const scaledHeight = (naturalHeight / naturalWidth) * containerWidth;
-          imagesContainer.style.height = scaledHeight + 'px';
-        } 
-        else if (currentSlide.tagName === "IFRAME") {
-          // Try to use actual video dimensions if available
-          if (currentSlide.videoWidth && currentSlide.videoHeight) {
-            imagesContainer.style.height = (currentSlide.videoHeight / currentSlide.videoWidth) * containerWidth + 'px';
-          } else {
-            // Fallback ratio if real dimensions aren't available
-            imagesContainer.style.height = containerWidth * 0.75 + 'px'; // ~4:3 fallback
-          }
+          const { naturalWidth, naturalHeight } = currentSlide;
+          if (!naturalWidth) return;
+          newHeight = (naturalHeight / naturalWidth) * containerWidth;
+        } else if (currentSlide.tagName === "IFRAME") {
+          newHeight = containerWidth * 0.5625; // 16:9
         }
+
+        if (newHeight) {
+          carousel.style.height = newHeight + 'px';
+          imagesContainer.style.height = newHeight + 'px';
+        }
+      };
+
+      const updateCarousel = () => {
+        imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+        updateHeight();
       };
 
       const prevBtn = carousel.querySelector('.prev');
@@ -1162,16 +1156,16 @@
         });
       }
 
-      // Update height when iframe finishes loading
       images.forEach(slide => {
-        if (slide.tagName === "IFRAME") {
-          slide.addEventListener("load", updateHeight);
+        if (slide.tagName === "IMG") {
+          slide.addEventListener("load", () => {
+            if (images[index] === slide) updateHeight();
+          });
         } else if (slide.tagName === "IFRAME") {
           slide.addEventListener("load", updateHeight);
         }
       });
 
-      // On page load and resize, adjust height
       window.addEventListener('load', updateCarousel);
       window.addEventListener('resize', updateHeight);
     });
