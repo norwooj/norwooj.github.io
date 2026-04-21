@@ -339,6 +339,7 @@ h2 {
   display: flex;
   transition: transform 0.4s ease;
   align-items: center;
+  width: 100%
 }
 
 .carousel-images img,

@@ -1166,6 +1166,8 @@
       images.forEach(slide => {
         if (slide.tagName === "IFRAME") {
           slide.addEventListener("load", updateHeight);
+        } else if (slide.tagName === "IFRAME") {
+          slide.addEventListener("load", updateHeight);
         }
       });
 
