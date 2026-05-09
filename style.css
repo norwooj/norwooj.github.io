@@ -488,7 +488,7 @@ nav ul li a:hover {
   }
 
   .project-card:hover .text {
-    max-height: 2000px;
+    max-height: 600px;
   }
 
   .project-card:hover {
@@ -505,7 +505,7 @@ nav ul li a:hover {
 
   .project-card:hover p:not(.status) {
     opacity: 1;
-    max-height: 2000px;
+    max-height: 600px;
     margin-top: 1rem;
   }
 }
@@ -517,11 +517,6 @@ nav ul li a:hover {
     margin-top: 1rem;
   }
 } */
-
-.project-card:hover .text {
-  max-height: 200rem;
-  opacity: 1;
-}
 
 .project-card .tags {
   margin-top: 0.5rem;
