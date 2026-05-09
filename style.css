@@ -484,11 +484,11 @@ nav ul li a:hover {
 @media (hover: hover) and (pointer: fine) {
   .project-card .text {
     max-height: 6rem;
-    transition: max-height 1s ease, opacity 1s ease
+    transition: max-height 1.5s ease, opacity 1.5s ease
   }
 
   .project-card:hover .text {
-    max-height: 600px;
+    max-height: 700px;
   }
 
   .project-card:hover {
@@ -500,12 +500,12 @@ nav ul li a:hover {
     opacity: 0;
     max-height: 0;
     margin-top: 0;
-    transition: opacity 1s ease, max-height 1s ease, margin-top 0.5s ease;
+    transition: opacity 1.5s ease, max-height 1.5s ease, margin-top 0.5s ease;
   }
 
   .project-card:hover p:not(.status) {
     opacity: 1;
-    max-height: 600px;
+    max-height: 700px;
     margin-top: 1rem;
   }
 }
