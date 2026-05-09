@@ -488,7 +488,7 @@ nav ul li a:hover {
   }
 
   .project-card:hover .text {
-    max-height: 700px;
+    max-height: 1000px;
   }
 
   .project-card:hover {
@@ -505,7 +505,7 @@ nav ul li a:hover {
 
   .project-card:hover p:not(.status) {
     opacity: 1;
-    max-height: 700px;
+    max-height: 1000px;
     margin-top: 1rem;
   }
 }
