@@ -467,7 +467,30 @@ nav ul li a:hover {
   transform: scale(1.05);
 }
 
+/* New */
+
+.project-card p:not(.status) {
+  opacity: 1;
+  max-height: 2000px;
+  margin-top: 1rem;
+}
+
+.project-card .text {
+  overflow: hidden;
+  max-height: 2000px;
+  position: relative;
+}
+
 @media (hover: hover) and (pointer: fine) {
+  .project-card .text {
+    max-height: 6rem;
+    transition: max-height 1s ease, opacity 1s ease
+  }
+
+  .project-card:hover .text {
+    max-height: 2000px;
+  }
+
   .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
@@ -482,28 +505,21 @@ nav ul li a:hover {
 
   .project-card:hover p:not(.status) {
     opacity: 1;
-    max-height: 500px;
+    max-height: 2000px;
     margin-top: 1rem;
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
   .project-card p:not(.status) {
     opacity: 1;
     max-height: 1000px;
     margin-top: 1rem;
   }
-}
-
-.project-card .text {
-  overflow: hidden;
-  max-height: 6rem;
-  transition: max-height 1s ease, opacity 1s ease;
-  position: relative;
-}
+} */
 
 .project-card:hover .text {
-  max-height: 50rem;
+  max-height: 200rem;
   opacity: 1;
 }
 
